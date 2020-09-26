@@ -51,7 +51,7 @@ def division(a:float,b:float):
     try:
         return a/b
     except ZeroDivisionError:
-        print("Cannot divide by 0")
+        return "Cannot divide by 0."
 
 def power(a:float,b:float):
     """[returns power]
@@ -75,12 +75,15 @@ def root(a:float,b:float):
     Returns:
         [float]: [square root of number1 and square root of number2]
     """
-    if a<0 and b>0:
-        print(f"The first number is bellow 0, the second square root is {math.sqrt(b)}")
-    elif a>0 and b<0:
-        print(f"The first square root is {math.sqrt(a)}, number is bellow 0")
-    else:
-        return f"{math.sqrt(a)} and {math.sqrt(b)}"
+    try:
+        if a<0 and b>0:
+            return f"The first number is bellow 0, the second square root is {math.sqrt(b)}."
+        elif a>0 and b<0:
+            return f"The first square root is {math.sqrt(a)}, number is bellow 0."
+        else:
+            return f"{math.sqrt(a)} and {math.sqrt(b)}."
+    except:
+        return "Cannot find square root from negative numbers."
 
 
 try:
@@ -90,11 +93,13 @@ try:
         if choice==7:
             break
         elif choice>7 or choice<1:
-            print("Please choose between 1-7")
+            print("Please choose between 1-7.")
             continue
         else:
+
             number1=float(input("Please enter the 1. number: "))
             number2=float(input("Please enter the 2.number: "))
+
             if choice==1:
                 print(addition(number1,number2))
             elif choice==2:
@@ -108,6 +113,6 @@ try:
             elif choice==6:
                 print(root(number1,number2))
 except ValueError:
-    print("Wrong input, you can choose only between 1-7. Please start over")
+    print("Wrong input. Please start over.")
 
-print("Thank you for using the calculator")
+print("Thank you for using the calculator!")
