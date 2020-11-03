@@ -1,4 +1,5 @@
 #SIMPLE Calculator
+
 import math
 
 print("The simple calculator is only for two numbers")
