@@ -1,2 +1,2 @@
 # functions.py
-This simple calculator is made as a school project.
+This simple calculator and tests are made as a school project.
