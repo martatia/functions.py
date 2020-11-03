@@ -82,36 +82,37 @@ def root(a:float,b:float):
             return f"The first square root is {math.sqrt(a)}, number is bellow 0."
         else:
             return f"{math.sqrt(a)} and {math.sqrt(b)}."
-    except:
+    except ValueError:
         return "Cannot find square root from negative numbers."
 
-if __name__=="__main__":
-    try:
-        while True:
-            print("1=addition; 2=substraction; 3=multiplication; 4=division; 5=power(number1^number2); 6=square root of two numbers; 7=exit")
-            choice=int(input("Please choose what would you like to count(1-7): "))
-            if choice==7:
-                break
-            elif choice>7 or choice<1:
-                print("Please choose between 1-7.")
-                continue
-            else:
-                number1=float(input("Please enter the 1. number: "))
-                number2=float(input("Please enter the 2.number: "))
 
-                if choice==1:
-                    print(addition(number1,number2))
-                elif choice==2:
-                    print(substraction(number1,number2))
-                elif choice==3:
-                    print(multiplication(number1,number2))
-                elif choice==4:
-                    print(division(number1,number2))
-                elif choice==5:
-                    print(power(number1,number2))
-                elif choice==6:
-                    print(root(number1,number2))
-    except ValueError:
-        print("Wrong input. Please start over.")
+try:
+    while True:
+        print("1=addition; 2=substraction; 3=multiplication; 4=division; 5=power(number1^number2); 6=square root of two numbers; 7=exit")
+        choice=int(input("Please choose what would you like to count(1-7): "))
+        if choice==7:
+            break
+        elif choice>7 or choice<1:
+            print("Please choose between 1-7.")
+            continue
+        else:
 
-    print("Thank you for using the calculator!")
+            number1=float(input("Please enter the 1. number: "))
+            number2=float(input("Please enter the 2.number: "))
+
+            if choice==1:
+                print(addition(number1,number2))
+            elif choice==2:
+                print(substraction(number1,number2))
+            elif choice==3:
+                print(multiplication(number1,number2))
+            elif choice==4:
+                print(division(number1,number2))
+            elif choice==5:
+                print(power(number1,number2))
+            elif choice==6:
+                print(root(number1,number2))
+except ValueError:
+    print("Wrong input. Please start over.")
+
+print("Thank you for using the calculator!")
